@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mer. 03 juin 2020 à 17:14
+-- Généré le : jeu. 04 juin 2020 à 18:09
 -- Version du serveur :  10.4.11-MariaDB
--- Version de PHP : 7.4.5
+-- Version de PHP : 7.4.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `test`
+-- Base de données : `skills-management_project`
 --
 
 -- --------------------------------------------------------
@@ -43,7 +43,8 @@ INSERT INTO `users` (`id`, `username`, `password`) VALUES
 (147, 'fahad', '$2y$10$dMJq7UPq3YmeLQnWTCHLQu1Q/nrSo4C05YM/Rye2v3fG5P8nwcoP.'),
 (152, 'ahmed', '$2y$10$dR6ZPl.z.ffTt6MDsJTNkOEqDYgjsTqUDfHebPeZHTQNYUfa6JkHK'),
 (160, 'fahad_altaieasfasf', '$2y$10$g3A6AwRJjypCmHwTlzZw.uKhMt8F.CR44/sd7ZLv5CCMoU7FCdpH.'),
-(161, 'test', '$2y$10$yduroHHON6bwI6PgCyyaleGX9k0T7P1SPIb5ai6OGYaNjxFh.m7P.');
+(161, 'test', '$2y$10$yduroHHON6bwI6PgCyyaleGX9k0T7P1SPIb5ai6OGYaNjxFh.m7P.'),
+(178, 'Bob', '$2y$10$3dYbqcgRSzAU7ap0i/ap..Udz6zb4M8jnD3z.zOXmE/qWFuS6BG/m');
 
 --
 -- Index pour les tables déchargées
@@ -66,7 +67,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=171;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=179;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

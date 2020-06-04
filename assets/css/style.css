@@ -10,7 +10,7 @@ body {
     color: #666666;
 }
 
-nav a{
+nav a {
     color: lightseagreen;
     font-size: 20px;
     line-height: 20px;
@@ -32,6 +32,13 @@ h2 {
 h3 {
     color: #9969c5;
     font-size: 1.3em;
+}
+
+.inscription {
+    color: lightseagreen;
+    font-size: 20px;
+    line-height: 20px;
+    text-decoration: none;
 }
 
 form {

@@ -1,96 +1,179 @@
+<?php
 
+
+if(empty(trim($_REQUEST["username"]??""))){
+  $username_Err = "VEUILLEZ ENTRER VOTRE IDENTIFIENT.";
+} 
+
+if(empty(trim($_REQUEST["password"]??""))){
+
+   $password_Err="VEUILLEZ ENTRER VOTRE MOT DE PASSE . ";
+}
+
+
+require_once "Model.php";
+
+class LoginPage
+
+{    
+  
+function __construct()
+{
+    
+ 
+   
+  
+}
+
+
+
+
+  static $GO="";
+
+   
+   public static function login()
+{
+
+
+ // $array["request"]=$_REQUEST;
+
+///  echo LoginPage::$arr=json_encode($array,JSON_PRETTY_PRINT);
+
+ 
+      $username=$_REQUEST["user"]??"";
+
+$passwordForm= $_REQUEST["password"]??"";
+
+
+
+             
+
+$Result=Model::Read("users","username",$username);
+
+$passwordHash=password_hash($passwordForm, PASSWORD_DEFAULT);
+
+  
+           
+ foreach($Result as $arr){
+
+ extract($arr);
+ 
+            
+
+      if(!empty($arr)){
+                
+          
+ 
+
+          if(password_verify($passwordForm,$password))
+              
+     {
         
+             
+      echo  LoginPage::$GO= "<script>location.href='admin.php'</script>";
+        
+        
+     }
+      
+}
+
+}
+     
+}
+
+    static function CreateUser()
+{
+     
+ static $ArrayAsso=[];
+ static $register="";
+
+
+ $ArrayAsso=[
+
+  "username"=>$_REQUEST['user']??"",
+  "password"=>$_REQUEST['password']?? "",
+ ];
+
+
+  
+ $register=$_REQUEST["register"]??"";
+
+
+ $Result=Model::Read("users","username",$ArrayAsso["username"]);
+
+foreach($Result as $table){
+  extract($table);
+
+  
+
+}
+        
+
+if($register =="register"){
+
+
+
+ 
+
+$ArrayAsso['password']=password_hash($ArrayAsso["password"],PASSWORD_DEFAULT);
+
+if(empty($table))
+{
+
+  if($username!=$ArrayAsso['username']){
+
+$RequetSql=
+<<<CODE
+INSERT INTO users
+ (username,password) 
+VALUES
+(:username,:password)
+CODE;
+  
+
+  
+ Model::SendToSql($RequetSql,$ArrayAsso);
+  }
+}
+}
+}
+
+}
+     
+
+
+LoginPage::CreateUser();
+LoginPage::login();
+
+?>
+
+
+
         <h2>Accueil</h2>
 
+        <!-- ------------------------------- LOGIN -------------------------------------- -->
         <section>
             <h3>FORMULAIRE DE LOGIN</h3>
-            <form class="ajax">
-                <input type="email" name="email" required placeholder="VOTRE EMAIL">
-                <input type="password" name="password" required placeholder="VOTRE PASSWORD">
+            <form action="" method="POST">
+                <label>Identifiant</label>
+                <input type="text" name="user" required placeholder="Entrer votre Identifiant">
+                <label>Mot de Passe</label>
+                <input type="password" name="password" required placeholder="Entrer votre Mot de Passe">
                 <button type="submit" class="big-button">SE CONNECTER</button>
-                <div class="confirmation"></div>
-                <!-- ON VA DISTINGUER LES FORMULAIRES AVEC DES INFOS TECHNIQUES -->
-                <input type="hidden" name="methodeApi" value="login">
             </form>
         </section>
 
+        <!-- ----------------------------- INSCRIPTION ---------------------------------- -->
         <section>
+            <br>
+            VOUS AVEZ BESOIN D'UN COMPTE<a href="inscription.php" class="inscription"> Cliquer ici</a>
             <h3>FORMULAIRE D'INSCRIPTION</h3>
-            <form class="ajax">
-                <input type="email" name="email" required placeholder="VOTRE EMAIL">
-                <input type="text" name="login" required placeholder="VOTRE LOGIN">
-                <input type="password" name="password" required placeholder="VOTRE PASSWORD">
+            <form action="" method="POST">
+                <label>Identifiant</label>
+                <input type="text" name="user" required placeholder="Choisir votre Identifiant">
+                <label>Mot de Passe</label>
+                <input type="password" name="password" required placeholder="Choisir votre Mot de Passe">
                 <button type="submit" class="big-button">CREER VOTRE COMPTE</button>
-                <div class="confirmation"></div>
-                <!-- ON VA DISTINGUER LES FORMULAIRES AVEC DES INFOS TECHNIQUES -->
-                <input type="hidden" name="methodeApi" value="create">
+                <input type="hidden" name="register" value="register">
             </form>
         </section>
-
-    <script>
-    // ON VA PASSER LE FORMULAIRE EN AJAX
-    // ON VA RANGER NOTRE CODE DANS UN OBJET => POO
-    var mc = {};    // mc => Mon Code
-
-    mc.start = function ()
-    {
-        // CODE POUR INITIALISER JS SUR MA PAGE
-        console.log("START EN COURS...");
-
-        // ON VA PASSER LES FORMULAIRE QUI ONT LA CLASSE ajax EN MODE AJAX
-        // (ON PEUT AVOIR PLUSIEURS FORMULAIRES SUR LA MEME PAGE =>querySelectorAll)
-        var listeSelection = document.querySelectorAll('form.ajax');
-        listeSelection.forEach(function (balise) {
-            balise.addEventListener('submit', mc.cbAjax);
-        });
-    }
-
-    mc.cbAjax = function (event)
-    {
-        // BLOQUER LE FORMULAIRE CLASSIQUE
-        event.preventDefault();
-        console.log("FORMULAIRE AN AJAX...");
-
-        // ON PEUT ENVOYER LES INFOS DU FORMULAIRE EN AJAX
-        var formulaire = event.target;
-        var formData = new FormData(formulaire); // ASPIRE LES INFOS DU FORMULAIRE
-
-        fetch('api.php', {
-            method: 'POST',
-            body: formData
-        })
-        .then(function(reponseServeur){
-            return reponseServeur.json();
-        })
-        .then(function (json) {
-            console.log(json);
-
-            // JE PEUX RECUPERER LA CLE API
-            if ('cleApi' in json)
-            {
-                // ON VA LE MEMORISER DANS sessionStorage
-                // POUR POUVOIR LE REUTILISER SUR LA PAGE admin
-                sessionStorage.setItem('cleApi', json.cleApi);
-            }
-
-        });
-    }
-
-    // ET ON APPELLE LA METHODE
-    mc.start();
-
-    </script>
-
-
-
-    <!-- A SUPPRIMER -->
-    <!-- <section>
-        <h2>DEV (ROUTEUR)</h2>
-        <?php echo "LE NAVIGATEUR DEMANDE LA PAGE QUI CORRESPOND A $filename" ?>
-    </section>
-
-    <section>
-        <h2><?php echo $titre ?? "" ?></h2>
-        <p><?php echo $contenu ?? "" ?></p>
-        <img src="<?php echo $image ?? "" ?>" alt="photo1">
-    </section> -->
