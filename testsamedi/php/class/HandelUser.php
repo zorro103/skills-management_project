@@ -140,7 +140,7 @@
      
     Model::SendToSql($RequetSql,$ArrayAsso);
       
-  
+    destroy_session();
    
    }
    }
