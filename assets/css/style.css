@@ -19,6 +19,10 @@ nav a {
     text-decoration: none;
 }
 
+nav a:hover {
+    color: rgb(10, 136, 130);
+}
+
 h1 {
     color: lightseagreen;
     font-size: 3em;
@@ -71,6 +75,24 @@ form label {
     border-radius: 8px;
     border: 0px;
     background-color: inherit;
+}
+
+form .labelNone {
+    background-color: #FFFFFF;
+    border: 0;
+}
+
+form a {
+    color: lightseagreen;
+    font-size: 20px;
+    line-height: 20px;
+    padding: 0px;
+    margin-left: 0px;
+    text-decoration: none;
+}
+
+form a:hover {
+    color: rgb(10, 136, 130);
 }
 
 .big-button {

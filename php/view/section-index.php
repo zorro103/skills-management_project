@@ -1,179 +1,131 @@
 <?php
-
-
-if(empty(trim($_REQUEST["username"]??""))){
-  $username_Err = "VEUILLEZ ENTRER VOTRE IDENTIFIENT.";
-} 
-
-if(empty(trim($_REQUEST["password"]??""))){
-
-   $password_Err="VEUILLEZ ENTRER VOTRE MOT DE PASSE . ";
-}
-
-
-require_once "Model.php";
-
-class LoginPage
-
-{    
-  
-function __construct()
-{
+require_once "php/view/header.php";
+?>
+        
+    <h2>Accueil</h2>
+       
+    <!-- ------------------------------- LOGIN -------------------------------------- -->
+    <section class="login">
     
- 
-   
+      <h3>FORMULAIRE DE LOGIN</h3>   
+      <form  class="login" action="" method="POST">
+
+        <label for="email">Email</label>
+        <input type="email" id="email"  required placeholder="Entrer votre Email"name="email">
+
+        <label for="password">Mot de Passe</label>
+        <input type="password" required placeholder="Entrer votre Mot de Passe" id="password" name="password">
+
+        <button  type="submit" class="big-button">SE CONNECTER</button>
+
+        <span class="labelNone">Besoin d'un Compte ?<span> <span onclick="myfunction()" class="aa"><a href="#">S'inscrire</a></span>
+      </form>
+
+    </section>
+
+
+
+    <!-- ---------------------------- REGISTER ------------------------------------ -->
+    <section class="register cache">
+       <h3>FORMULAIRE D'INSCRIPTION</h3>
+       <form method="POST"  action="" class="">
+
+        <label for="email">Email</label>  
+        <input type="email" id="user"  required placeholder="Entrer votre Email" name="email">
+
+        <label for="username">Nom d'utilisateur</label>
+        <input type="text" name="username" requried placeholder="Entrer votre Nom d'Utilisateur">
+
+        <label for="password">Mot de Passe</label>
+
+        <input type="password"  required placeholder="Entrer votre Mot de Passe" id ="password" name="password">
+
+        <button  type="submit" class="big-button">CREER VOTRE COMPTE</button>
+
+        <input type="hidden" name="register" value="register">
+
+        <span onclick="myfunction2()" class="labelNone"><a href="#">Vous avez déjà un Compte ?</a></span>
+      </form>
   
-}
+    </section>
 
-
-
-
-  static $GO="";
-
-   
-   public static function login()
-{
-
-
- // $array["request"]=$_REQUEST;
-
-///  echo LoginPage::$arr=json_encode($array,JSON_PRETTY_PRINT);
-
- 
-      $username=$_REQUEST["user"]??"";
-
-$passwordForm= $_REQUEST["password"]??"";
-
-
-
-             
-
-$Result=Model::Read("users","username",$username);
-
-$passwordHash=password_hash($passwordForm, PASSWORD_DEFAULT);
-
-  
-           
- foreach($Result as $arr){
-
- extract($arr);
- 
-            
-
-      if(!empty($arr)){
-                
-          
- 
-
-          if(password_verify($passwordForm,$password))
-              
-     {
-        
-             
-      echo  LoginPage::$GO= "<script>location.href='admin.php'</script>";
-        
-        
-     }
-      
-}
-
-}
-     
-}
-
-    static function CreateUser()
-{
-     
- static $ArrayAsso=[];
- static $register="";
-
-
- $ArrayAsso=[
-
-  "username"=>$_REQUEST['user']??"",
-  "password"=>$_REQUEST['password']?? "",
- ];
-
-
-  
- $register=$_REQUEST["register"]??"";
-
-
- $Result=Model::Read("users","username",$ArrayAsso["username"]);
-
-foreach($Result as $table){
-  extract($table);
-
-  
-
-}
-        
-
-if($register =="register"){
-
-
-
- 
-
-$ArrayAsso['password']=password_hash($ArrayAsso["password"],PASSWORD_DEFAULT);
-
-if(empty($table))
-{
-
-  if($username!=$ArrayAsso['username']){
-
-$RequetSql=
-<<<CODE
-INSERT INTO users
- (username,password) 
-VALUES
-(:username,:password)
-CODE;
-  
-
-  
- Model::SendToSql($RequetSql,$ArrayAsso);
-  }
-}
-}
-}
-
-}
-     
-
-
-LoginPage::CreateUser();
-LoginPage::login();
-
+ <?php
+require_once "php/view/footer.php";
 ?>
 
+<script> 
+const email=document.getElementById("email");
+const password=document.getElementById("password");
+var login=document.querySelector(".login");
+const error=document.getElementById('error');
+
+login.addEventListener("submit",(e)=>{
+
+    let message=[];
+
+    if(email.value == "" || password.value =="" ){
+
+        message.push("ce champs est obligatoire");
+    
+    }
+     
+    if(password.value.length <= 6){
 
 
-        <h2>Accueil</h2>
+        message.push("le Mot de passe ne correspond pas ou email est déja pris  ");
 
-        <!-- ------------------------------- LOGIN -------------------------------------- -->
-        <section>
-            <h3>FORMULAIRE DE LOGIN</h3>
-            <form action="" method="POST">
-                <label>Identifiant</label>
-                <input type="text" name="user" required placeholder="Entrer votre Identifiant">
-                <label>Mot de Passe</label>
-                <input type="password" name="password" required placeholder="Entrer votre Mot de Passe">
-                <button type="submit" class="big-button">SE CONNECTER</button>
-            </form>
-        </section>
+    }
+  if(password.value.length>20){
 
-        <!-- ----------------------------- INSCRIPTION ---------------------------------- -->
-        <section>
-            <br>
-            VOUS AVEZ BESOIN D'UN COMPTE<a href="inscription.php" class="inscription"> Cliquer ici</a>
-            <h3>FORMULAIRE D'INSCRIPTION</h3>
-            <form action="" method="POST">
-                <label>Identifiant</label>
-                <input type="text" name="user" required placeholder="Choisir votre Identifiant">
-                <label>Mot de Passe</label>
-                <input type="password" name="password" required placeholder="Choisir votre Mot de Passe">
-                <button type="submit" class="big-button">CREER VOTRE COMPTE</button>
-                <input type="hidden" name="register" value="register">
-            </form>
-        </section>
+    message.push("le mot de passe ou email n'est pas valide ");
+  }
+                if(message.length > 0 ){
+
+                    e.preventDefault()
+                    error.innerHTML=message.join(', ')
+                }
+
+
+})
+
+
+function myfunction ()
+{
+   var register=document.querySelector(".register");
+   register.classList.remove("cache");
+   var login=document.querySelector(".login");
+   login.classList.add("cache");
+}
+function myfunction2()
+{
+   var register=document.querySelector(".register");
+   register.classList.add("cache");
+   var login=document.querySelector(".login");
+   login.classList.remove("cache");
+
+}
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

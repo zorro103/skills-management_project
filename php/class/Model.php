@@ -34,7 +34,7 @@ return $Result;
 
   try
   {
-      $pdo=new PDO("mysql:host=localhost;dbname=test;charset=utf8;","root","");
+      $pdo=new PDO("mysql:host=localhost;dbname=skills-management_project;charset=utf8;","root","");
    }
     catch(PDOException $E){
     

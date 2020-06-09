@@ -38,7 +38,7 @@ static function ChargerView()
 {        
        
          
-         $section="section";
+         $section="section-index";
       
      
        require_once "php/view/$section.php";
