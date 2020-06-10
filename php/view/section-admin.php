@@ -325,12 +325,13 @@ function rafraichirListeArticle ()
                         <p class="statut ${article.skill07}">${article.skill07}</p>
                         <h6>8. Elaborer et mettre en oeuvre des composants dans une application de gestion de contenu ou e-commerce</h6>
                         <p class="statut ${article.skill08}">${article.skill08}</p>
-                        
-                        
+                        <button class="update" data-indice="${indice}" data-id="${article.id}">modifier</button>
+                         <button class="delete" data-id="${article.id}">supprimer</button>       
                     </article>
         `;
         // <button class="update" data-indice="${indice}" data-id="${article.id}">modifier</button>
         //                 <button class="delete" data-id="${article.id}">supprimer</button>
+
         // AJOUTER DANS LA BALISE listSkill
         baliseListSkill.innerHTML += codeHTML;
     }
@@ -366,8 +367,8 @@ function modifierLigne (event)
     // MAINTENANT IL FAUT COPIER LES INFOS DANS LE FORMULAIRE
     // id, nom, prenom, skill01, skill02...
     document.querySelector("form.update input[name=id]").value = article.id;
-    document.querySelector("form.update textarea[name=nom]").value = article.nom;
-    document.querySelector("form.update textarea[name=prenom]").value = article.prenom;
+    document.querySelector("form.update input[name=nom]").value = article.nom;
+    document.querySelector("form.update input[name=prenom]").value = article.prenom;
     document.querySelector("form.update input[name=skill01]").value = article.skill01;
     document.querySelector("form.update input[name=skill02]").value = article.skill02;
     document.querySelector("form.update input[name=skill03]").value = article.skill03;
