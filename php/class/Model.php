@@ -1,7 +1,5 @@
-
-
-
 <?php
+
 
 Class Model
 {
@@ -11,9 +9,13 @@ Class Model
 {
      
 $RequetSql=
+
 <<<CODE
+
 SELECT * FROM $TableName
+
 WHERE $ColonneName=:$ColonneName
+
 CODE;
 
 $pdoStatement=Model::SendToSql($RequetSql,["$ColonneName"=>$ColonneValue]);
@@ -58,18 +60,3 @@ return $Result;
 
    }
 
-
-   define('DB_SERVER', 'localhost');
-   define('DB_USERNAME', 'root');
-   define('DB_PASSWORD', '');
-   define('DB_NAME', 'skills-management_project');
-    
-   
-   $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
-    
-   
-   if($link === false){
-       die("ERROR: Could not connect. " . mysqli_connect_error());
-   
-       return $link;
-   }
