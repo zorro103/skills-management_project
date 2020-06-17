@@ -26,58 +26,58 @@ session_start();
 
                 <label>1. Maquetter une application</label>
                 <select name="skill01" size="1">
-                    <option>Niveau-1
-                    <option>Niveau-2
-                    <option>Niveau-3
+                    <option value="Niveau-1">Niveau 1
+                    <option value="Niveau-2">Niveau 2
+                    <option value="Niveau-3">Niveau 3
                 </select>
 
                 <label>2. Réaliser une interface utilisateur web statique et adaptable</label>
                 <select name="skill02" size="1">
-                    <option>Niveau-1
-                    <option>Niveau-2
-                    <option>Niveau-3
+                    <option value="Niveau-1">Niveau 1
+                    <option value="Niveau-2">Niveau 2
+                    <option value="Niveau-3">Niveau 3
                 </select>
 
                 <label>3. Développer une interface utilisateur web dynamique</label>
                 <select name="skill03" size="1">
-                    <option>Niveau-1
-                    <option>Niveau-2
-                    <option>Niveau-3
+                    <option value="Niveau-1">Niveau 1
+                    <option value="Niveau-2">Niveau 2
+                    <option value="Niveau-3">Niveau 3
                 </select>
 
                 <label>4. Réaliser une interface utilisateur avec une solution de gestion de contenu ou e-commerce</label>
                 <select name="skill04" size="1">
-                    <option>Niveau-1
-                    <option>Niveau-2
-                    <option>Niveau-3
+                <option value="Niveau-1">Niveau 1
+                    <option value="Niveau-2">Niveau 2
+                    <option value="Niveau-3">Niveau 3
                 </select>
 
                 <label>5. Créer une base de données</label>
                 <select name="skill05" size="1">
-                    <option>Niveau-1
-                    <option>Niveau-2
-                    <option>Niveau-3
+                    <option value="Niveau-1">Niveau 1
+                    <option value="Niveau-2">Niveau 2
+                    <option value="Niveau-3">Niveau 3
                 </select>
 
                 <label>6. Développer les composants d’accès aux données</label>
                 <select name="skill06" size="1">
-                    <option>Niveau-1
-                    <option>Niveau-2
-                    <option>Niveau-3
+                    <option value="Niveau-1">Niveau 1
+                    <option value="Niveau-2">Niveau 2
+                    <option value="Niveau-3">Niveau 3
                 </select>
 
                 <label>7. Développer la partie back-end d’une application web ou web mobile</label>
                 <select name="skill07" size="1">
-                    <option>Niveau-1
-                    <option>Niveau-2
-                    <option>Niveau-3
+                    <option value="Niveau-1">Niveau 1
+                    <option value="Niveau-2">Niveau 2
+                    <option value="Niveau-3">Niveau 3
                 </select>
 
                 <label>8. Elaborer et mettre en oeuvre des composants dans une application de gestion de contenu ou e-commerce</label>
                 <select name="skill08" size="1">
-                    <option>Niveau-1
-                    <option>Niveau-2
-                    <option>Niveau-3
+                    <option value="Niveau-1">Niveau 1
+                    <option value="Niveau-2">Niveau 2
+                    <option value="Niveau-3">Niveau 3
                 </select>
 
                 <button type="submit" class="big-button">ENVOYER</button>
@@ -103,58 +103,58 @@ session_start();
 
                 <label>1. Maquetter une application</label>
                 <select name="skill01" size="1">
-                    <option>Niveau-1
-                    <option>Niveau-2
-                    <option>Niveau-3
+                    <option value="Niveau-1">Niveau 1
+                    <option value="Niveau-2">Niveau 2
+                    <option value="Niveau-3">Niveau 3
                 </select>
 
                 <label>2. Réaliser une interface utilisateur web statique et adaptable</label>
                 <select name="skill02" size="1">
-                    <option>Niveau-1
-                    <option>Niveau-2
-                    <option>Niveau-3
+                    <option value="Niveau-1">Niveau 1
+                    <option value="Niveau-2">Niveau 2
+                    <option value="Niveau-3">Niveau 3
                 </select>
 
                 <label>3. Développer une interface utilisateur web dynamique</label>
                 <select name="skill03" size="1">
-                    <option>Niveau-1
-                    <option>Niveau-2
-                    <option>Niveau-3
+                    <option value="Niveau-1">Niveau 1
+                    <option value="Niveau-2">Niveau 2
+                    <option value="Niveau-3">Niveau 3
                 </select>
 
                 <label>4. Réaliser une interface utilisateur avec une solution de gestion de contenu ou e-commerce</label>
                 <select name="skill04" size="1">
-                    <option>Niveau-1
-                    <option>Niveau-2
-                    <option>Niveau-3
+                    <option value="Niveau-1">Niveau 1
+                    <option value="Niveau-2">Niveau 2
+                    <option value="Niveau-3">Niveau 3
                 </select>
 
                 <label>5. Créer une base de données</label>
                 <select name="skill05" size="1">
-                    <option>Niveau-1
-                    <option>Niveau-2
-                    <option>Niveau-3
+                    <option value="Niveau-1">Niveau 1
+                    <option value="Niveau-2">Niveau 2
+                    <option value="Niveau-3">Niveau 3
                 </select>
 
                 <label>6. Développer les composants d’accès aux données</label>
                 <select name="skill06" size="1">
-                    <option>Niveau-1
-                    <option>Niveau-2
-                    <option>Niveau-3
+                    <option value="Niveau-1">Niveau 1
+                    <option value="Niveau-2">Niveau 2
+                    <option value="Niveau-3">Niveau 3
                 </select>
 
                 <label>7. Développer la partie back-end d’une application web ou web mobile</label>
                 <select name="skill07" size="1">
-                    <option>Niveau-1
-                    <option>Niveau-2
-                    <option>Niveau-3
+                    <option value="Niveau-1">Niveau 1
+                    <option value="Niveau-2">Niveau 2
+                    <option value="Niveau-3">Niveau 3
                 </select>
 
                 <label>8. Elaborer et mettre en oeuvre des composants dans une application de gestion de contenu ou e-commerce</label>
                 <select name="skill08" size="1">
-                    <option>Niveau-1
-                    <option>Niveau-2
-                    <option>Niveau-3
+                    <option value="Niveau-1">Niveau 1
+                    <option value="Niveau-2">Niveau 2
+                    <option value="Niveau-3">Niveau 3
                 </select>
 
                 <!-- IMPORTANT NE PAS OUBLIER L'ID DE LA LIGNE -->
@@ -310,21 +310,21 @@ function rafraichirListeArticle ()
                         <h5>${article.prenom}</h5>
                         <p class="id">ID ${article.id}</p>
                         <h6>1. Maquetter une application</h6>
-                        <p class="statut ${article.skill01}">${article.skill01}</p>
+                        <p class="statut ${article.skill01}">${format(article.skill01)}</p>
                         <h6>2. Réaliser une interface utilisateur web statique et adaptable</h6>
-                        <p class="statut ${article.skill02}">${article.skill02}</p>
+                        <p class="statut ${article.skill02}">${format(article.skill02)}</p>
                         <h6>3. Développer une interface utilisateur web dynamique</h6>
-                        <p class="statut ${article.skill03}">${article.skill03}</p>
+                        <p class="statut ${article.skill03}">${format(article.skill03)}</p>
                         <h6>4. Réaliser une interface utilisateur avec une solution de gestion de contenu ou e-commerce</h6>
-                        <p class="statut ${article.skill04}">${article.skill04}</p>
+                        <p class="statut ${article.skill04}">${format(article.skill04)}</p>
                         <h6>5. Créer une base de données</h6>
-                        <p class="statut ${article.skill05}">${article.skill05}</p>
+                        <p class="statut ${article.skill05}">${format(article.skill05)}</p>
                         <h6>6. Développer les composants d’accès aux données</h6>
-                        <p class="statut ${article.skill06}">${article.skill06}</p>
+                        <p class="statut ${article.skill06}">${format(article.skill06)}</p>
                         <h6>7. Développer la partie back-end d’une application web ou web mobile</h6>
-                        <p class="statut ${article.skill07}">${article.skill07}</p>
+                        <p class="statut ${article.skill07}">${format(article.skill07)}</p>
                         <h6>8. Elaborer et mettre en oeuvre des composants dans une application de gestion de contenu ou e-commerce</h6>
-                        <p class="statut ${article.skill08}">${article.skill08}</p>
+                        <p class="statut ${article.skill08}">${format(article.skill08)}</p>
                         <button class="update" data-indice="${indice}" data-id="${article.id}">modifier</button>
                          <button class="delete" data-id="${article.id}">supprimer</button>       
                     </article>
@@ -369,14 +369,14 @@ function modifierLigne (event)
     document.querySelector("form.update input[name=id]").value = article.id;
     document.querySelector("form.update input[name=nom]").value = article.nom;
     document.querySelector("form.update input[name=prenom]").value = article.prenom;
-    document.querySelector("form.update input[name=skill01]").value = article.skill01;
-    document.querySelector("form.update input[name=skill02]").value = article.skill02;
-    document.querySelector("form.update input[name=skill03]").value = article.skill03;
-    document.querySelector("form.update input[name=skill04]").value = article.skill04;
-    document.querySelector("form.update input[name=skill05]").value = article.skill05;
-    document.querySelector("form.update input[name=skill06]").value = article.skill06;
-    document.querySelector("form.update input[name=skill07]").value = article.skill07;
-    document.querySelector("form.update input[name=skill08]").value = article.skill08;
+    document.querySelector("form.update select[name=skill01]").value = article.skill01;
+    document.querySelector("form.update select[name=skill02]").value = article.skill02;
+    document.querySelector("form.update select[name=skill03]").value = article.skill03;
+    document.querySelector("form.update select[name=skill04]").value = article.skill04;
+    document.querySelector("form.update select[name=skill05]").value = article.skill05;
+    document.querySelector("form.update select[name=skill06]").value = article.skill06;
+    document.querySelector("form.update select[name=skill07]").value = article.skill07;
+    document.querySelector("form.update select[name=skill08]").value = article.skill08;
 
 }
 
@@ -395,6 +395,11 @@ function supprimerLigne (event)
     // MAINTENANT ON VA DECLENCHER L'ENVOI DU FORMULAIRE DE DELETE
     // document.querySelector("form.delete").submit(); // ENVOI SANS AJAX
     document.querySelector("form.delete button[type=submit]").click();
+}
+
+    // ON REMPLACE LES - PAR UN ESPACE
+function format(skill) {
+    return skill.replace("-", " ");
 }
 
 
